@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+
+        <header>
+            <h1>Evaluating News article with Aylien Natural Language Processing</h1>
+        </header>
+
+        <main>
+
+            <h4 class = "info">Type in a "URL" to see what the Aylien NLP understands from it.</h4>
+    
+
+            <section class="errors">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <div id="error"></div>
+            </section> 
+
+
+            <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <input id="name" type="url" name="test-url" value=""  placeholder="https://www.news-source/a-news-article...">
+                    <input type="submit" name="" value="SUBMIT" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)" style="cursor: pointer;">
+                </form>
+            <section>
+
+            <section class="url-results">
+                    <ul>
+                        <li>
+                            <h3>Text Polarity:</h3>
+                            <p id="polarity" style="color: white;"></p>
+                            <h4>Confidence: </h4>
+                            <p id="polarity_confidence" style="color: white;"></p>
+                        </li>
+    
+                        <li>
+                            <h3>Text Subjectivity:</h3>
+                            <p id="subjectivity" style="color: white;"></p>
+                            <h4>Confidence: </h4>
+                            <p id="subjectivity_confidence" style="color: white;"></p>
+                        </li>
+    
+                        <h3>Text Excerpt:</h3>
+                        <p id="excerpt" style="color: white;"></p>
+                    </ul>
+                </section>
+        </main>
+
+        <footer>
+            <p>© Done by Anu</p>
+        </footer>
+
+        <script>
+                // Check that service workers are supported
+                if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js').then(registration =>{
+                        console.log('SW registered: ', registration);
+                    });
+                });
+                }else{
+                console.log("Service Working not working");
+                    }
+        </script>
+
+    </body>
+</html>

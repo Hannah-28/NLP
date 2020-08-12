@@ -1,0 +1,24 @@
+$backGround : cadetblue;
+main {
+    background-color: $backGround;
+    padding: 2em;
+    .info {
+        text-align: center;
+        font-size: 1em;
+    }
+    
+
+}
+form {
+    padding: 3em 5em;
+    width: auto;
+    text-align: center;
+    display: grid;
+}
+
+input {
+    padding: 1.5em 2em;  
+    margin: 1em;
+    font-size: 1em;
+}
+
